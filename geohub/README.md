@@ -1,64 +1,74 @@
-GeoHub
+# GeoHub
 
-GeoHub is a Spring Boot–based REST API designed for managing countries and their associated cities.
-The application models a one-to-many relationship where multiple cities belong to a single country.
+GeoHub is a Spring Boot–based REST API designed for managing countries and their associated cities.  
+The application models a one-to-many relationship where multiple cities belong to a single country.  
 It provides endpoints supporting complete CRUD operations for both entities.
 
-Features:
-1.CRUD APIs for Country and City entities
-2.Many-to-One mapping between City and Country
-3.REST endpoints for retrieving a city’s country and all cities in a country
-4.Preloaded sample data with H2 in-memory database
+---
 
-Tech Stack:
-1.Java 21
-2.Spring Boot 3.x (Web, Data JPA, Validation)
-3.H2 Database
-4.Maven
+## Features
+- CRUD APIs for Country and City entities  
+- Many-to-One mapping between City and Country  
+- REST endpoints for retrieving a city’s country and all cities in a country  
+- Preloaded sample data with H2 in-memory database  
 
-Database Schema:
+---
 
-Country:
-countryId (PK)
-countryName
-currency
-population
-latitude
-longitude
+## Tech Stack
+- Java 21  
+- Spring Boot 3.x (Web, Data JPA, Validation)  
+- H2 Database  
+- Maven  
 
-City:
-cityId (PK)
-cityName
-population
-latitude
-longitude
-countryId (FK → Country)
+---
 
-REST Endpoints:
+## Database Schema
 
-Country APIs:
-GET /countries — list all countries
-POST /countries — add new country
-GET /countries/{countryId} — fetch country by ID
-PUT /countries/{countryId} — update country
-DELETE /countries/{countryId} — remove country
+**Country**  
+- countryId (PK)  
+- countryName  
+- currency  
+- population  
+- latitude  
+- longitude  
 
-City APIs:
-GET /countries/cities — list all cities
-POST /countries/cities — add new city
-GET /countries/cities/{cityId} — fetch city by ID
-PUT /countries/cities/{cityId} — update city
-DELETE /countries/cities/{cityId} — remove city
-GET /cities/{cityId}/country — fetch the country of a given city
+**City**  
+- cityId (PK)  
+- cityName  
+- population  
+- latitude  
+- longitude  
+- countryId (FK → Country)  
 
-Running the Application:
+---
 
+## REST Endpoints
+
+### Country APIs
+- `GET /countries` — List all countries  
+- `POST /countries` — Add a new country  
+- `GET /countries/{countryId}` — Fetch a country by ID  
+- `PUT /countries/{countryId}` — Update a country  
+- `DELETE /countries/{countryId}` — Remove a country  
+
+### City APIs
+- `GET /countries/cities` — List all cities  
+- `POST /countries/cities` — Add a new city  
+- `GET /countries/cities/{cityId}` — Fetch a city by ID  
+- `PUT /countries/cities/{cityId}` — Update a city  
+- `DELETE /countries/cities/{cityId}` — Remove a city  
+- `GET /cities/{cityId}/country` — Fetch the country of a given city  
+
+---
+
+## Running the Application
+
+```bash
 # Build the project
 mvn clean install
 
 # Run the application
 mvn spring-boot:run
 
-
-Application starts at:
-👉 http://localhost:8080
+##The application starts at:
+http://localhost:8080
