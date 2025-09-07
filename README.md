@@ -6,8 +6,11 @@ It provides endpoints supporting complete CRUD operations for both entities.
 
 Features:
 1.CRUD APIs for Country and City entities
+
 2.Many-to-One mapping between City and Country
+
 3.REST endpoints for retrieving a city’s country and all cities in a country
+
 4.Preloaded sample data with H2 in-memory database
 
 Tech Stack:
